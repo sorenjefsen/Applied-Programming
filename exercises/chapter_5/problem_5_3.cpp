@@ -17,8 +17,8 @@ run:
 # include "../../Library/vector_functions.hpp"
 
 
-void swap(int* p_i, int* p_j);
-void swap(int& i, int& j);
+void swap_pointer(int* p_i, int* p_j);
+void swap_ref(int& i, int& j);
 
 
 int main(int argc, char* argv[])
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
     //swap(p_i, p_j);
 
     // swap them using references
-    swap(i, j);
+    swap_ref(i, j);
 
     std::cout << i << ", "<< j;
 
@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 }
 
 
-void swap(int* p_i, int* p_j)
+void swap_pointer(int* p_i, int* p_j)
 // Function for swapping two values located at p_i and p_j, using arithmetic operations. 
 {
     *p_i = *p_i + *p_j;
@@ -55,7 +55,7 @@ void swap(int* p_i, int* p_j)
 
 }
 
-void swap(int& i, int&j)
+void swap_ref(int& i, int&j)
 {
     i = i + j;
     j = i - j;
